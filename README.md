@@ -33,14 +33,15 @@ npm install
 ## Variables de entorno
 
 Crear un archivo .env en la raíz con:
-PORT=8080
-MONGO_URI=<tu_string_de_conexion_mongo>
-SECRET=<tu_clave_privada>
+- PORT=8080
+- MONGO_URI=<tu_string_de_conexion_mongo>
+- SECRET=<tu_clave_privada>
 
 ## Comandos
-
+```
 npm start Inicia el servidor.
 npm run dev Inicia el servidor con nodemon.
+```
 
 ## Endpoints principales
 POST /session/register Registro de usuario.
@@ -49,6 +50,7 @@ GET /session/current Devuelve datos del usuario autenticado.
 
 
 ##Estructura de archivos
+```
 .
 ├── .env
 ├── .gitignore
@@ -72,7 +74,7 @@ GET /session/current Devuelve datos del usuario autenticado.
         │   └── header.handlebars
         ├── profile.handlebars
         └── register.handlebars
-
+```
 
 ## Dependencias
 - express
@@ -86,6 +88,6 @@ GET /session/current Devuelve datos del usuario autenticado.
 - cookie-parser
 
 ## Notas
-* No subir node_modules al repositorio.
-*Asegurarse de que el archivo .env no se suba.
-*Probar las rutas con Postman o un cliente HTTP.
+- No subir node_modules al repositorio.
+- Asegurarse de que el archivo .env no se suba.
+- Probar las rutas con Postman o un cliente HTTP.
