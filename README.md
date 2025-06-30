@@ -28,7 +28,7 @@ Proyecto de ecommerce con implementación de CRUD de usuarios y sistema de auten
 git clone https://github.com/tuUsuario/tuRepo.git
 cd tuRepo
 npm install
-
+```
 
 ## Variables de entorno
 
