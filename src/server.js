@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import sessionRouter from './routes/session.router.js'
 import passport from 'passport';
 import { initializedPassport } from './passport/index.js';
+import viewsRouter from './routes/views.router.js';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -31,14 +32,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
 
 //routes
-app.use('/session', sessionRouter)
-app.get('/session/register', (req, res) => res.render('register'));
-app.get('/session/login',    (req, res) => res.render('login'));
-app.get(
-  '/session/current',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => res.render('profile', { payload: req.user })
-);
+app.use('/session', sessionRouter);
+app.use('/session', viewsRouter);
 
 //servidor
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))
