@@ -1,4 +1,4 @@
-import CartDAO from '../daos/cart.dao.js';
+import CartDAO from '../daos/mongo/utils/cart.dao.js';
 
 const cartDAO = new CartDAO();
 

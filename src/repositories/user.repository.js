@@ -1,4 +1,4 @@
-import UserDAO from '../daos/user.dao.js';
+import UserDAO from '../daos/mongo/utils/user.dao.js';
 
 const userDAO = new UserDAO();
 

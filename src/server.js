@@ -12,13 +12,11 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 //conexion Mongo
-mongoose
-.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => console.log('MongoDB conectado'))
-.catch(err => console.error('Error MongoDB:', err.message));
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB conectado'))
+    .catch(err => console.error('Error MongoDB:', err.message));
 
-//Passport
-initializedPassport()
+initializedPassport();
 app.use(passport.initialize());
 
 //handlebars
@@ -31,9 +29,12 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
 
-//routes
+
+// Ruta principal
+app.get('/', (req, res) => { res.render('index'); });
+
 app.use('/session', sessionRouter);
-app.use('/session', viewsRouter);
+app.use('/views', viewsRouter);
 
 //servidor
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))

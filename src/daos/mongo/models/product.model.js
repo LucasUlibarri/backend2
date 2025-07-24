@@ -14,10 +14,6 @@ const productSchema = new Schema({
   stock: Number,
   category: String,
   thumbnail: [String],
-  num: {
-    type: Number,
-    required: true,
-  }
 }, {versionKey: false});
 
 const productModel = model(productCollection, productSchema);

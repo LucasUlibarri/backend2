@@ -24,3 +24,4 @@ export const extractCookie = req =>
   req?.cookies?.access_token || null;
 
 export { PRIVATE_KEY };
+ 
